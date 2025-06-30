@@ -33,7 +33,7 @@ async def ingest(transaction: Transaction):
 
     # Load into BigQuery
     client = bigquery.Client()
-    table_id = os.environ["BQ_TABLE_ID"]
+    table_id = os.environ["psychic-raceway-461010-a1.new_etl_http.etl_table"]
     errors = client.insert_rows_json(table_id, [enriched])
     if errors:
         raise HTTPException(status_code=500, detail=str(errors))
