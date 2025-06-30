@@ -1,0 +1,6 @@
+{
+  "transaction_id": "string",
+  "amount": "float",
+  "currency": "string",
+  "region": "string"
+}
