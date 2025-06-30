@@ -20,7 +20,7 @@ class Transaction(BaseModel):
 
 @app.post("/ingest")
 async def ingest(transaction: Transaction):
-    tax_rate = 0.1
+    tax_rate = 0.3
     tax = round(transaction.amount * tax_rate, 2)
     enriched = {
         "transaction_id": transaction.transaction_id,
