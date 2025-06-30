@@ -5,9 +5,10 @@ steps:
       - -c
       - |
         python -m venv venv
-        source venv/bin/activate
+        . venv/bin/activate
+        pip install --upgrade pip
         pip install -r requirements.txt
-        pytest
+        ./venv/bin/pytest
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/etl-service:$SHORT_SHA', '.']
